@@ -34,3 +34,22 @@ This project follows OOP principles such as:
 - Inheritance
 - Polymorphism
 - Encapsulation
+##  Screenshots
+
+### University / Home
+![University](university.png)
+
+### Main System
+![UDM](UDM.png)
+
+### Students
+![Students](Students.png)
+
+### Rooms
+![Rooms](Rooms.png)
+
+### Dormitories
+![Dormitories](Dormitories.png)
+
+### Restaurant
+![Restaurant](Restaurant.png)
