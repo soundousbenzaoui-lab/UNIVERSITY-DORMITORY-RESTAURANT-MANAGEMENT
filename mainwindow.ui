@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UDRMS - University Dormitory &amp; Restaurant Management</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="sidebar" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>168</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>168</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="sidebarLayout">
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>28</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="lblLogo">
+         <property name="text">
+          <string>UDRMS</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="logoSpacer">
+         <property name="orientation"><enum>Qt::Vertical</enum></property>
+         <property name="sizeType"><enum>QSizePolicy::Fixed</enum></property>
+         <property name="sizeHint"><size><width>20</width><height>22</height></size></property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavDashboard">
+         <property name="text">
+          <string>  🏠   Dashboard</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavUniversity">
+         <property name="text">
+          <string>  🎓   University</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavDormitory">
+         <property name="text">
+          <string>  🏛   Dormitory</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavRoom">
+         <property name="text">
+          <string>  🚪   Rooms</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavStudent">
+         <property name="text">
+          <string>  🧑‍🎓   Students</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavRestaurant">
+         <property name="text">
+          <string>  🍽   Restaurant</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="sidebarSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+
+      <widget class="QWidget" name="pageDashboard">
+       <layout class="QVBoxLayout" name="dashboardLayout">
+        <property name="spacing"><number>18</number></property>
+        <property name="leftMargin"><number>28</number></property>
+        <property name="topMargin"><number>24</number></property>
+        <property name="rightMargin"><number>28</number></property>
+        <property name="bottomMargin"><number>24</number></property>
+
+        <item>
+         <widget class="QFrame" name="welcomeBanner">
+          <layout class="QVBoxLayout" name="welcomeBannerLayout">
+           <property name="spacing"><number>4</number></property>
+           <property name="leftMargin"><number>22</number></property>
+           <property name="topMargin"><number>18</number></property>
+           <property name="rightMargin"><number>22</number></property>
+           <property name="bottomMargin"><number>18</number></property>
+           <item>
+            <widget class="QLabel" name="lblWelcomeTitle">
+             <property name="text"><string>Welcome back 👋</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblWelcomeSubtitle">
+             <property name="text"><string>Here is what's happening across your university residences today.</string></property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+
+        <item>
+         <layout class="QHBoxLayout" name="statsRow">
+          <property name="spacing"><number>14</number></property>
+          <item>
+           <widget class="QFrame" name="statCardStudents">
+            <layout class="QVBoxLayout" name="statCardStudentsLayout">
+             <property name="spacing"><number>2</number></property>
+             <property name="leftMargin"><number>16</number></property>
+             <property name="topMargin"><number>14</number></property>
+             <property name="rightMargin"><number>16</number></property>
+             <property name="bottomMargin"><number>14</number></property>
+             <item><widget class="QLabel" name="lblStatStudentsIcon"><property name="text"><string>🧑‍🎓</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatStudentsValue"><property name="text"><string>0</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatStudentsCaption"><property name="text"><string>Students</string></property></widget></item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="statCardRooms">
+            <layout class="QVBoxLayout" name="statCardRoomsLayout">
+             <property name="spacing"><number>2</number></property>
+             <property name="leftMargin"><number>16</number></property>
+             <property name="topMargin"><number>14</number></property>
+             <property name="rightMargin"><number>16</number></property>
+             <property name="bottomMargin"><number>14</number></property>
+             <item><widget class="QLabel" name="lblStatRoomsIcon"><property name="text"><string>🚪</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatRoomsValue"><property name="text"><string>0</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatRoomsCaption"><property name="text"><string>Total Rooms</string></property></widget></item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="statCardAvailable">
+            <layout class="QVBoxLayout" name="statCardAvailableLayout">
+             <property name="spacing"><number>2</number></property>
+             <property name="leftMargin"><number>16</number></property>
+             <property name="topMargin"><number>14</number></property>
+             <property name="rightMargin"><number>16</number></property>
+             <property name="bottomMargin"><number>14</number></property>
+             <item><widget class="QLabel" name="lblStatAvailableIcon"><property name="text"><string>✅</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatAvailableValue"><property name="text"><string>0</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatAvailableCaption"><property name="text"><string>Available Rooms</string></property></widget></item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="statCardDorms">
+            <layout class="QVBoxLayout" name="statCardDormsLayout">
+             <property name="spacing"><number>2</number></property>
+             <property name="leftMargin"><number>16</number></property>
+             <property name="topMargin"><number>14</number></property>
+             <property name="rightMargin"><number>16</number></property>
+             <property name="bottomMargin"><number>14</number></property>
+             <item><widget class="QLabel" name="lblStatDormsIcon"><property name="text"><string>🏛</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatDormsValue"><property name="text"><string>0</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatDormsCaption"><property name="text"><string>Dormitories</string></property></widget></item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="statCardMeals">
+            <layout class="QVBoxLayout" name="statCardMealsLayout">
+             <property name="spacing"><number>2</number></property>
+             <property name="leftMargin"><number>16</number></property>
+             <property name="topMargin"><number>14</number></property>
+             <property name="rightMargin"><number>16</number></property>
+             <property name="bottomMargin"><number>14</number></property>
+             <item><widget class="QLabel" name="lblStatMealsIcon"><property name="text"><string>🍽</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatMealsValue"><property name="text"><string>0</string></property></widget></item>
+             <item><widget class="QLabel" name="lblStatMealsCaption"><property name="text"><string>Menu Items</string></property></widget></item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+
+        <item>
+         <widget class="QLabel" name="lblQuickActionsHdr">
+          <property name="text"><string>Quick Actions</string></property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="quickActionsRow">
+          <property name="spacing"><number>12</number></property>
+          <item>
+           <widget class="QPushButton" name="btnQuickDormitory">
+            <property name="text"><string>🏛  Add Dormitory</string></property>
+            <property name="minimumHeight"><number>44</number></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnQuickRoom">
+            <property name="text"><string>🚪  Add Room</string></property>
+            <property name="minimumHeight"><number>44</number></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnQuickStudent">
+            <property name="text"><string>🧑‍🎓  Assign Student</string></property>
+            <property name="minimumHeight"><number>44</number></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnQuickRestaurant">
+            <property name="text"><string>🍽  Manage Menu</string></property>
+            <property name="minimumHeight"><number>44</number></property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="quickActionsSpacer">
+            <property name="orientation"><enum>Qt::Horizontal</enum></property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+
+        <item>
+         <layout class="QHBoxLayout" name="dashboardBottomRow">
+          <property name="spacing"><number>16</number></property>
+          <item>
+           <widget class="QFrame" name="activityCard">
+            <layout class="QVBoxLayout" name="activityCardLayout">
+             <property name="spacing"><number>0</number></property>
+             <property name="leftMargin"><number>0</number></property>
+             <property name="topMargin"><number>0</number></property>
+             <property name="rightMargin"><number>0</number></property>
+             <property name="bottomMargin"><number>0</number></property>
+             <item>
+              <widget class="QLabel" name="lblActivityHdr">
+               <property name="text"><string>📋  Recent Activity</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="listRecentActivity"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="notificationsCard">
+            <layout class="QVBoxLayout" name="notificationsCardLayout">
+             <property name="spacing"><number>0</number></property>
+             <property name="leftMargin"><number>0</number></property>
+             <property name="topMargin"><number>0</number></property>
+             <property name="rightMargin"><number>0</number></property>
+             <property name="bottomMargin"><number>0</number></property>
+             <item>
+              <widget class="QLabel" name="lblNotificationsHdr">
+               <property name="text"><string>🔔  Notifications</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="listNotifications"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageUniversity">
+       <layout class="QVBoxLayout" name="universityLayout">
+        <property name="spacing"><number>18</number></property>
+        <property name="leftMargin"><number>28</number></property>
+        <property name="topMargin"><number>24</number></property>
+        <property name="rightMargin"><number>28</number></property>
+        <property name="bottomMargin"><number>24</number></property>
+        <item>
+         <widget class="QLabel" name="lblUniversityTitle">
+          <property name="text"><string>University</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="universityFormCard">
+          <layout class="QHBoxLayout" name="universityFormLayout">
+           <property name="spacing"><number>10</number></property>
+           <property name="leftMargin"><number>18</number></property>
+           <property name="topMargin"><number>14</number></property>
+           <property name="rightMargin"><number>18</number></property>
+           <property name="bottomMargin"><number>14</number></property>
+           <item>
+            <widget class="QLabel" name="lblUnivName">
+             <property name="text"><string>University Name</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="editUnivName">
+             <property name="minimumWidth"><number>280</number></property>
+             <property name="maximumWidth"><number>340</number></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnSetUnivName">
+             <property name="text"><string>Save</string></property>
+             <property name="minimumWidth"><number>96</number></property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="universitySpacer">
+             <property name="orientation"><enum>Qt::Horizontal</enum></property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="universityStatCard">
+          <layout class="QHBoxLayout" name="universityStatLayout">
+           <property name="leftMargin"><number>18</number></property>
+           <property name="topMargin"><number>12</number></property>
+           <property name="rightMargin"><number>18</number></property>
+           <property name="bottomMargin"><number>12</number></property>
+           <item>
+            <widget class="QLabel" name="lblUnivInfo">
+             <property name="text"><string>Dormitories: 0</string></property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="universityStatSpacer">
+             <property name="orientation"><enum>Qt::Horizontal</enum></property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="universityTableCard">
+          <layout class="QVBoxLayout" name="universityTableCardLayout">
+           <property name="spacing"><number>0</number></property>
+           <property name="leftMargin"><number>0</number></property>
+           <property name="topMargin"><number>0</number></property>
+           <property name="rightMargin"><number>0</number></property>
+           <property name="bottomMargin"><number>0</number></property>
+           <item>
+            <widget class="QTableWidget" name="tableDormitoriesOverview">
+             <property name="columnCount"><number>3</number></property>
+             <column><property name="text"><string>Dormitory</string></property></column>
+             <column><property name="text"><string>Capacity</string></property></column>
+             <column><property name="text"><string>Available Rooms</string></property></column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageDormitory">
+       <layout class="QVBoxLayout" name="dormitoryLayout">
+        <property name="spacing"><number>18</number></property>
+        <property name="leftMargin"><number>28</number></property>
+        <property name="topMargin"><number>24</number></property>
+        <property name="rightMargin"><number>28</number></property>
+        <property name="bottomMargin"><number>24</number></property>
+        <item>
+         <widget class="QLabel" name="lblDormitoryTitle">
+          <property name="text"><string>Dormitories</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="dormitoryFormCard">
+          <layout class="QHBoxLayout" name="dormitoryFormLayout">
+           <property name="spacing"><number>10</number></property>
+           <property name="leftMargin"><number>18</number></property>
+           <property name="topMargin"><number>14</number></property>
+           <property name="rightMargin"><number>18</number></property>
+           <property name="bottomMargin"><number>14</number></property>
+           <item>
+            <widget class="QLabel" name="lblDormName">
+             <property name="text"><string>Name</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="editDormName">
+             <property name="minimumWidth"><number>220</number></property>
+             <property name="maximumWidth"><number>260</number></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblDormCapacity">
+             <property name="text"><string>Capacity</string></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="spinDormCapacity">
+             <property name="minimumWidth"><number>90</number></property>
+             <property name="maximumWidth"><number>100</number></property>
+             <property name="minimum"><number>1</number></property>
+             <property name="maximum"><number>10000</number></property>
+             <property name="value"><number>100</number></property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="dormitoryFormSpacer">
+             <property name="orientation"><enum>Qt::Horizontal</enum></property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnAddDormitory">
+             <property name="text"><string>Add</string></property>
+             <property name="minimumWidth"><number>96</number></property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnDeleteDormitory">
+             <property name="text"><string>Delete</string></property>
+             <property name="minimumWidth"><number>96</number></property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="dormitorySearchLayout">
+          <property name="spacing"><number>10</number></property>
+          <item>
+           <widget class="QLineEdit" name="editSearchDormitory">
+            <property name="minimumWidth"><number>260</number></property>
+            <property name="maximumWidth"><number>320</number></property>
+            <property name="placeholderText"><string>Search by name...</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnSearchDormitory">
+            <property name="text"><string>Search</string></property>
+            <property name="minimumWidth"><number>96</number></property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="dormitorySearchSpacer">
+            <property name="orientation"><enum>Qt::Horizontal</enum></property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QFrame" name="dormitoryTableCard">
+          <layout class="QVBoxLayout" name="dormitoryTableCardLayout">
+           <property name="spacing"><number>0</number></property>
+           <property name="leftMargin"><number>0</number></property>
+           <property name="topMargin"><number>0</number></property>
+           <property name="rightMargin"><number>0</number></property>
+           <property name="bottomMargin"><number>0</number></property>
+           <item>
+            <widget class="QTableWidget" name="tableDormitory">
+             <property name="columnCount"><number>3</number></property>
+             <column><property name="text"><string>Name</string></property></column>
+             <column><property name="text"><string>Capacity</string></property></column>
+             <column><property name="text"><string>Available Rooms</string></property></column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageRoom">
+       <layout class="QVBoxLayout" name="roomLayout">
+        <property name="spacing"><number>18</number></property>
+        <property name="leftMargin"><number>28</number></property>
+        <property name="topMargin"><number>24</number></property>
+        <property name="rightMargin"><number>28</number></property>
+        <property name="bottomMargin"><number>24</number></property>
+        <item>
+         <widget class="QLabel" name="lblRoomTitle">
+          <property name="text"><string>Rooms</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="roomFormCard">
+          <layout class="QVBoxLayout" name="roomFormCardLayout">
+           <property name="spacing"><number>14</number></property>
+           <property name="leftMargin"><number>18</number></property>
+           <property name="topMargin"><number>16</number></property>
+           <property name="rightMargin"><number>18</number></property>
+           <property name="bottomMargin"><number>16</number></property>
+           <item>
+            <layout class="QHBoxLayout" name="roomFilterLayout">
+             <property name="spacing"><number>10</number></property>
+             <item>
+              <widget class="QLabel" name="lblRoomDormSelect">
+               <property name="text"><string>Dormitory</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboRoomDormitory">
+               <property name="minimumWidth"><number>200</number></property>
+               <property name="maximumWidth"><number>240</number></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="roomFilterSpacer">
+               <property name="orientation"><enum>Qt::Horizontal</enum></property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QFrame" name="roomFormDivider">
+             <property name="frameShape"><enum>QFrame::HLine</enum></property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="roomFormLayout">
+             <property name="spacing"><number>10</number></property>
+             <item>
+              <widget class="QLabel" name="lblRoomNumber">
+               <property name="text"><string>Room Number</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinRoomNumber">
+               <property name="minimumWidth"><number>90</number></property>
+               <property name="maximumWidth"><number>100</number></property>
+               <property name="minimum"><number>1</number></property>
+               <property name="maximum"><number>9999</number></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblRoomCapacity">
+               <property name="text"><string>Capacity</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinRoomCapacity">
+               <property name="minimumWidth"><number>80</number></property>
+               <property name="maximumWidth"><number>90</number></property>
+               <property name="minimum"><number>1</number></property>
+               <property name="maximum"><number>20</number></property>
+               <property name="value"><number>2</number></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="roomFormSpacer">
+               <property name="orientation"><enum>Qt::Horizontal</enum></property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnAddRoom">
+               <property name="text"><string>Add</string></property>
+               <property name="minimumWidth"><number>96</number></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnDeleteRoom">
+               <property name="text"><string>Delete</string></property>
+               <property name="minimumWidth"><number>96</number></property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="roomTableCard">
+          <layout class="QVBoxLayout" name="roomTableCardLayout">
+           <property name="spacing"><number>0</number></property>
+           <property name="leftMargin"><number>0</number></property>
+           <property name="topMargin"><number>0</number></property>
+           <property name="rightMargin"><number>0</number></property>
+           <property name="bottomMargin"><number>0</number></property>
+           <item>
+            <widget class="QTableWidget" name="tableRoom">
+             <property name="columnCount"><number>3</number></property>
+             <column><property name="text"><string>Room Number</string></property></column>
+             <column><property name="text"><string>Capacity</string></property></column>
+             <column><property name="text"><string>Occupancy</string></property></column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageStudent">
+       <layout class="QVBoxLayout" name="studentLayout">
+        <property name="spacing"><number>18</number></property>
+        <property name="leftMargin"><number>28</number></property>
+        <property name="topMargin"><number>24</number></property>
+        <property name="rightMargin"><number>28</number></property>
+        <property name="bottomMargin"><number>24</number></property>
+        <item>
+         <widget class="QLabel" name="lblStudentTitle">
+          <property name="text"><string>Students</string></property>
+         </widget>
+        </item>
+
+        <item>
+         <widget class="QFrame" name="studentFormCard">
+          <layout class="QVBoxLayout" name="studentFormCardLayout">
+           <property name="spacing"><number>14</number></property>
+           <property name="leftMargin"><number>18</number></property>
+           <property name="topMargin"><number>16</number></property>
+           <property name="rightMargin"><number>18</number></property>
+           <property name="bottomMargin"><number>16</number></property>
+           <item>
+            <layout class="QHBoxLayout" name="studentFilterLayout">
+             <property name="spacing"><number>10</number></property>
+             <item>
+              <widget class="QLabel" name="lblStudentDormSelect">
+               <property name="text"><string>Dormitory</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboStudentDormitory">
+               <property name="minimumWidth"><number>180</number></property>
+               <property name="maximumWidth"><number>200</number></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblStudentRoomSelect">
+               <property name="text"><string>Room</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboStudentRoom">
+               <property name="minimumWidth"><number>100</number></property>
+               <property name="maximumWidth"><number>110</number></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="studentFilterSpacer">
+               <property name="orientation"><enum>Qt::Horizontal</enum></property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QFrame" name="studentFormDivider">
+             <property name="frameShape"><enum>QFrame::HLine</enum></property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="studentFormLayout">
+             <property name="spacing"><number>10</number></property>
+             <item>
+              <widget class="QLabel" name="lblStudentId">
+               <property name="text"><string>ID</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinStudentId">
+               <property name="minimumWidth"><number>80</number></property>
+               <property name="maximumWidth"><number>90</number></property>
+               <property name="minimum"><number>1</number></property>
+               <property name="maximum"><number>999999</number></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblStudentName">
+               <property name="text"><string>Full Name</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="editStudentName">
+               <property name="minimumWidth"><number>220</number></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblStudentYear">
+               <property name="text"><string>Year</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinStudentYear">
+               <property name="minimumWidth"><number>70</number></property>
+               <property name="maximumWidth"><number>80</number></property>
+               <property name="minimum"><number>1</number></property>
+               <property name="maximum"><number>8</number></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="studentFormSpacer">
+               <property name="orientation"><enum>Qt::Horizontal</enum></property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnAddStudent">
+               <property name="text"><string>Assign</string></property>
+               <property name="minimumWidth"><number>96</number></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnDeleteStudent">
+               <property name="text"><string>Remove</string></property>
+               <property name="minimumWidth"><number>96</number></property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+
+        <item>
+         <layout class="QHBoxLayout" name="studentSearchLayout">
+          <property name="spacing"><number>10</number></property>
+          <item>
+           <widget class="QLineEdit" name="editSearchStudent">
+            <property name="minimumWidth"><number>260</number></property>
+            <property name="maximumWidth"><number>320</number></property>
+            <property name="placeholderText"><string>Search by name or ID...</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnSearchStudent">
+            <property name="text"><string>Search</string></property>
+            <property name="minimumWidth"><number>96</number></property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="studentSearchSpacer">
+            <property name="orientation"><enum>Qt::Horizontal</enum></property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+
+        <item>
+         <widget class="QFrame" name="studentTableCard">
+          <layout class="QVBoxLayout" name="studentTableCardLayout">
+           <property name="spacing"><number>0</number></property>
+           <property name="leftMargin"><number>0</number></property>
+           <property name="topMargin"><number>0</number></property>
+           <property name="rightMargin"><number>0</number></property>
+           <property name="bottomMargin"><number>0</number></property>
+           <item>
+            <widget class="QTableWidget" name="tableStudent">
+             <property name="columnCount"><number>3</number></property>
+             <column><property name="text"><string>ID</string></property></column>
+             <column><property name="text"><string>Full Name</string></property></column>
+             <column><property name="text"><string>Academic Year</string></property></column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageRestaurant">
+       <layout class="QVBoxLayout" name="restaurantLayout">
+        <property name="spacing"><number>18</number></property>
+        <property name="leftMargin"><number>28</number></property>
+        <property name="topMargin"><number>24</number></property>
+        <property name="rightMargin"><number>28</number></property>
+        <property name="bottomMargin"><number>24</number></property>
+        <item>
+         <widget class="QLabel" name="lblRestaurantTitle">
+          <property name="text"><string>Restaurant</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="restaurantFormCard">
+          <layout class="QVBoxLayout" name="restaurantFormCardLayout">
+           <property name="spacing"><number>14</number></property>
+           <property name="leftMargin"><number>18</number></property>
+           <property name="topMargin"><number>16</number></property>
+           <property name="rightMargin"><number>18</number></property>
+           <property name="bottomMargin"><number>16</number></property>
+           <item>
+            <layout class="QHBoxLayout" name="restaurantFilterLayout">
+             <property name="spacing"><number>10</number></property>
+             <item>
+              <widget class="QLabel" name="lblRestaurantDormSelect">
+               <property name="text"><string>Dormitory</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboRestaurantDormitory">
+               <property name="minimumWidth"><number>200</number></property>
+               <property name="maximumWidth"><number>240</number></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="restaurantFilterSpacer">
+               <property name="orientation"><enum>Qt::Horizontal</enum></property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QFrame" name="restaurantFormDivider">
+             <property name="frameShape"><enum>QFrame::HLine</enum></property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="restaurantFormLayout">
+             <property name="spacing"><number>10</number></property>
+             <item>
+              <widget class="QLabel" name="lblMealType">
+               <property name="text"><string>Meal</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboMealType">
+               <property name="minimumWidth"><number>120</number></property>
+               <property name="maximumWidth"><number>130</number></property>
+               <item><property name="text"><string>Breakfast</string></property></item>
+               <item><property name="text"><string>Lunch</string></property></item>
+               <item><property name="text"><string>Dinner</string></property></item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="editMealItem">
+               <property name="minimumWidth"><number>200</number></property>
+               <property name="placeholderText"><string>Item name...</string></property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="restaurantFormSpacer">
+               <property name="orientation"><enum>Qt::Horizontal</enum></property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnAddMealItem">
+               <property name="text"><string>Add Item</string></property>
+               <property name="minimumWidth"><number>96</number></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnRemoveMealItem">
+               <property name="text"><string>Remove Item</string></property>
+               <property name="minimumWidth"><number>96</number></property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="restaurantListsLayout">
+          <property name="spacing"><number>16</number></property>
+          <item>
+           <widget class="QFrame" name="breakfastCard">
+            <layout class="QVBoxLayout" name="breakfastCardLayout">
+             <property name="spacing"><number>0</number></property>
+             <property name="leftMargin"><number>0</number></property>
+             <property name="topMargin"><number>0</number></property>
+             <property name="rightMargin"><number>0</number></property>
+             <property name="bottomMargin"><number>0</number></property>
+             <item>
+              <widget class="QLabel" name="lblBreakfastHdr">
+               <property name="text"><string>🌅  Breakfast</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="listBreakfast"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="lunchCard">
+            <layout class="QVBoxLayout" name="lunchCardLayout">
+             <property name="spacing"><number>0</number></property>
+             <property name="leftMargin"><number>0</number></property>
+             <property name="topMargin"><number>0</number></property>
+             <property name="rightMargin"><number>0</number></property>
+             <property name="bottomMargin"><number>0</number></property>
+             <item>
+              <widget class="QLabel" name="lblLunchHdr">
+               <property name="text"><string>☀  Lunch</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="listLunch"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="dinnerCard">
+            <layout class="QVBoxLayout" name="dinnerCardLayout">
+             <property name="spacing"><number>0</number></property>
+             <property name="leftMargin"><number>0</number></property>
+             <property name="topMargin"><number>0</number></property>
+             <property name="rightMargin"><number>0</number></property>
+             <property name="bottomMargin"><number>0</number></property>
+             <item>
+              <widget class="QLabel" name="lblDinnerHdr">
+               <property name="text"><string>🌙  Dinner</string></property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="listDinner"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
